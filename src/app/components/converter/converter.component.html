@@ -1,0 +1,34 @@
+<form class="example-form" [formGroup]="form">
+
+  <section class="example-form-item">
+    <mat-form-field class="example-full-width" appearance="outline">
+      <input formControlName="valueOne" (change)="onChange($event, 'valueOne', form.controls['valueOne'].value)" matInput placeholder="0" type="number">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Валюта</mat-label>
+      <mat-select formControlName="selectOne" (openedChange)="onSelectChange($event, 'selectOne', form.controls['selectOne'].value)" >
+        <mat-option *ngFor="let elem of currencyData" [value]="elem.ccy" >
+          {{elem.ccy}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </section>
+
+  <section class="example-form-item">
+    <mat-form-field class="example-full-width" appearance="outline">
+      <input formControlName="valueTwo" (change)="onChange($event, 'valueTwo', form.controls['valueTwo'].value)" matInput placeholder="0" type="number">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Валюта</mat-label>
+      <mat-select formControlName="selectTwo" (openedChange)="onSelectChange($event, 'selectTwo', form.controls['selectTwo'].value)" >
+        <mat-option *ngFor="let elem of currencyData" [value]="elem.ccy" >
+          {{elem.ccy}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </section>
+
+
+</form>

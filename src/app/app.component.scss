@@ -1,0 +1,18 @@
+mat-spinner{
+  top: 50%;
+  margin: 0 auto;
+}
+.preloader-container{
+  position: absolute;
+  top: 0;
+  background-color: #ffffffc7;
+  width: 100%;
+  height: 100%;
+  z-index: 1001;
+}
+.content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
