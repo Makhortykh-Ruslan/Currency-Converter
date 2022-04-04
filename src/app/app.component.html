@@ -1,6 +1,6 @@
 <section class="content">
   <app-home-page ></app-home-page>
 </section>
-<ng-container *ngIf="notificationService.$preloader | async" class="preloader-container">
+<section *ngIf="notificationService.$preloader | async" class="preloader-container">
   <mat-spinner></mat-spinner>
-</ng-container>
+</section>
