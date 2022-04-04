@@ -7,7 +7,7 @@
 
     <mat-form-field appearance="outline">
       <mat-label>Валюта</mat-label>
-      <mat-select formControlName="selectOne" (openedChange)="onSelectChange($event, 'selectOne', form.controls['selectOne'].value)" >
+      <mat-select formControlName="selectOne" (openedChange)="onSelectChange($event, 'selectOne')" >
         <mat-option *ngFor="let elem of currencyData" [value]="elem.ccy" >
           {{elem.ccy}}
         </mat-option>
@@ -22,7 +22,7 @@
 
     <mat-form-field appearance="outline">
       <mat-label>Валюта</mat-label>
-      <mat-select formControlName="selectTwo" (openedChange)="onSelectChange($event, 'selectTwo', form.controls['selectTwo'].value)" >
+      <mat-select formControlName="selectTwo" (openedChange)="onSelectChange($event, 'selectTwo')" >
         <mat-option *ngFor="let elem of currencyData" [value]="elem.ccy" >
           {{elem.ccy}}
         </mat-option>

@@ -56,7 +56,7 @@ export class ConverterComponent implements OnInit, OnDestroy {
 
   }
 
-  onSelectChange(event: boolean, name: string, value: any) {
+  onSelectChange(event: boolean, name: string) {
     if(!event){
       this.active = name === 'selectOne';
       if(this.form.get('selectOne')?.value === this.form.get('selectTwo')?.value){
@@ -78,17 +78,22 @@ export class ConverterComponent implements OnInit, OnDestroy {
   }
   currencyResult(value: number, name: string): void{
     const currencyValueOneSelect = this.form.get('selectOne');
+    const currencyValueTwoSelect = this.form.get('selectTwo');
     const inputValueOne = this.form.get('valueOne');
     const inputValueTwo = this.form.get('valueTwo');
     if(this.active && name === 'valueOne'){
       let result: string;
-      result = (value * this.getCurrencyValue[currencyValueOneSelect?.value]).toFixed(2)
+      result = (value * this.getCurrencyValue[currencyValueOneSelect?.value === 'UAH' ? currencyValueTwoSelect?.value : currencyValueOneSelect?.value]).toFixed(2)
       console.log(result)
       inputValueTwo?.setValue(result)
     }
     if(!this.active && name === 'valueTwo'){
       let result: string;
-      result = (value / this.getCurrencyValue[currencyValueOneSelect?.value]).toFixed(2)
+      if(currencyValueOneSelect?.value === 'UAH'){
+        result = (value * this.getCurrencyValue[currencyValueTwoSelect?.value]).toFixed(2)
+      }else {
+        result = (value / this.getCurrencyValue[currencyValueOneSelect?.value]).toFixed(2)
+      }
       console.log(result)
       inputValueOne?.setValue(result)
     }
