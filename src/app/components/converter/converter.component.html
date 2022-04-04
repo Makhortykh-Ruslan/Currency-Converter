@@ -2,7 +2,7 @@
 
   <section class="example-form-item">
     <mat-form-field class="example-full-width" appearance="outline">
-      <input formControlName="valueOne" (change)="onChange($event, 'valueOne', form.controls['valueOne'].value)" matInput placeholder="0" type="number">
+      <input formControlName="valueOne"   (input)="onChange($event, 'valueOne')" matInput placeholder="0" type="number">
     </mat-form-field>
 
     <mat-form-field appearance="outline">
@@ -17,7 +17,7 @@
 
   <section class="example-form-item">
     <mat-form-field class="example-full-width" appearance="outline">
-      <input formControlName="valueTwo" (change)="onChange($event, 'valueTwo', form.controls['valueTwo'].value)" matInput placeholder="0" type="number">
+      <input formControlName="valueTwo" (input)="onChange($event, 'valueTwo')" matInput placeholder="0" type="number">
     </mat-form-field>
 
     <mat-form-field appearance="outline">

@@ -7,14 +7,12 @@ import {NotificationService} from './services/notification.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit, AfterViewChecked {
-  public preloaderState: boolean | undefined;
-  constructor(private notificationService: NotificationService, private cdr: ChangeDetectorRef) {
+  constructor(public notificationService: NotificationService, private cdr: ChangeDetectorRef) {
   }
   ngAfterViewChecked(): void {
     this.cdr.detectChanges();
   }
 
   ngOnInit(): void {
-    this.notificationService.$preloader.subscribe(state => this.preloaderState = state);
   }
 }
